@@ -1,0 +1,44 @@
+header {
+    padding: 0.5rem;
+    color: var(--color-purple);
+    text-decoration: underline;
+}
+
+.transaction {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction > button {
+    background-color: var(--color-purple);
+}
+
+.history {
+    --color-white: #ffffff;
+}
+
+.history li, .balance {
+    background-color: var(--color-white);
+}
+
+.history li:hover {
+    background-color: var(--color-plus);
+    filter: blur(2px);
+}
+
+.positive {
+    border-left: groove var(--color-minus);
+} 
+
+.negative {
+    border-left: groove var(--color-plus);
+}
+
+:focus {
+    outline: 1px groove var(--color-purple);
+}
+
+.instructions {
+    font-size: 80%;
+    color: var(--color-plus);
+}

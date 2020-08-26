@@ -1,0 +1,100 @@
+:root {
+    --measure: 60ch;
+    --s1: 1rem;
+    --color-plus: rgb(255, 46, 46);
+    --color-minus: rgb(11, 255, 11);
+    --color-purple: #9c88ff;
+    --color-light-purple: #ebe8f8;
+    --color-white: #fff;
+
+    border-width: var(--s1);
+    background-color: var(--color-light-purple);
+    outline: none;
+}
+
+* {
+    /*max-width: var(--measure);*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+html, 
+body,
+div,
+section,
+header,
+main, 
+footer {
+    max-width: none;
+}
+
+* > hr {
+    border: solid;
+}
+
+.box {
+    --space: calc(var(--s1) * 0.5);
+    padding: var(--space);
+}
+
+.stack {
+    --space: var(--s1);
+}
+
+.stack > * + * {
+    margin-top: var(--space);
+}
+
+.stack > hr, .stack > li {
+    --space: calc(var(--s1) * 0.5);
+}
+
+.switcher {
+    --space: var(--s1);
+    --threshold: 48rem;
+    overflow: hidden;
+}
+
+.switcher > * {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc((var(--space)) * -1);
+}
+
+.switcher > * > * {
+    margin: calc((var(--space)));
+    flex-grow: 1;
+    flex-basis: calc((var(--threshold) - calc(100% - var(--space))) * 999);
+}
+
+.switcher > * > :nth-last-child(n + 5),
+.switcher > * > :nth-last-child(n + 5) ~ * {
+    flex-basis: 100%;
+}
+
+.split > * {
+    display: flex;
+}
+
+.split > * > :first-child {
+    margin-right: auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 700px) {
+    :root {
+        font-size: 130%;
+    }
+}
